@@ -39,6 +39,7 @@ namespace MinecraftModTranslator.Pages
 
                     //检测语言文件
                     string assetsDir = Path.Combine(Globals.ModRoot!, "assets");
+                    Globals.ModLangDir.Clear();
                     foreach (var asset in Directory.GetDirectories(assetsDir))
                         if (Directory.Exists(Path.Combine(asset, "lang")))
                             Globals.ModLangDir.Add(Path.Combine(asset, "lang"));
