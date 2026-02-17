@@ -126,7 +126,8 @@ namespace MinecraftModTranslator.Pages
                 }
 
                 Globals.ModJarPath = JarPath;
-                NavigationService.Navigate(new PageLoad());
+
+                Frame.Navigate(typeof(PageLoad), null, new ModernWpf.Media.Animation.DrillInNavigationTransitionInfo());
             }
             catch (Exception ex)
             {

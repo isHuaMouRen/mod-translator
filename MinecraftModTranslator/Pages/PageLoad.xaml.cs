@@ -36,7 +36,7 @@ namespace MinecraftModTranslator.Pages
                         Globals.ModFabricInfo = JsonConvert.DeserializeObject<JsonFabricInfo.Index>(File.ReadAllText(Path.Combine(Globals.ModRoot, "fabric.mod.json")));
 
 
-                    NavigationService.Navigate(new PageModInfo());
+                    Frame.Navigate(typeof(PageModInfo), null, new ModernWpf.Media.Animation.DrillInNavigationTransitionInfo());
                 }
                 catch (Exception ex)
                 {
@@ -50,6 +50,6 @@ namespace MinecraftModTranslator.Pages
             });
         }
 
-        private void button_Back_Click(object sender, RoutedEventArgs e) => NavigationService.Navigate(new PageMod());
+        private void button_Back_Click(object sender, RoutedEventArgs e) => Frame.Navigate(typeof(PageMod), null, new ModernWpf.Media.Animation.DrillInNavigationTransitionInfo());
     }
 }

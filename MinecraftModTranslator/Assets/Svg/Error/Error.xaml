@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<Viewbox xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform" Name="Error">
+    <Canvas UseLayoutRounding="False" Width="24.0" Height="24.0">
+        <Canvas.Clip>
+            <RectangleGeometry Rect="0.0,0.0,24.0,24.0"/>
+        </Canvas.Clip>
+        <Path Fill="#ff000000">
+            <Path.Data>
+                <PathGeometry Figures="M 11.001 10 h 2 v 5 h -2 z M 11 16 h 2 v 2 h -2 z" FillRule="Nonzero"/>
+            </Path.Data>
+        </Path>
+        <Path Fill="#ff000000">
+            <Path.Data>
+                <PathGeometry Figures="M 13.768 4.2 C 13.42 3.545 12.742 3.138 12 3.138 s -1.42 0.407 -1.768 1.063 L 2.894 18.064 a 1.99 1.99 0 0 0 0.054 1.968 A 1.98 1.98 0 0 0 4.661 21 h 14.678 c 0.708 0 1.349 -0.362 1.714 -0.968 a 1.99 1.99 0 0 0 0.054 -1.968 z M 4.661 19 L 12 5.137 L 19.344 19 z" FillRule="Nonzero"/>
+            </Path.Data>
+        </Path>
+    </Canvas>
+</Viewbox>
