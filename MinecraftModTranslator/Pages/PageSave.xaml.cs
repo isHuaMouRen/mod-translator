@@ -139,7 +139,7 @@ namespace MinecraftModTranslator.Pages
                         Process.Start(new ProcessStartInfo
                         {
                             FileName = "explorer.exe",
-                            Arguments = $"/select \"{savePath}\"",
+                            Arguments = $"/select,\"{savePath}\"",
                             UseShellExecute = true
                         });
                     }));
@@ -237,7 +237,7 @@ namespace MinecraftModTranslator.Pages
                         Process.Start(new ProcessStartInfo
                         {
                             FileName = "explorer.exe",
-                            Arguments = $"/select \"{savePath}\"",
+                            Arguments = $"/select,\"{savePath}\"",
                             UseShellExecute = true
                         });
                     }));
