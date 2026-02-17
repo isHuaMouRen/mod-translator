@@ -39,7 +39,6 @@ namespace MinecraftModTranslator.Pages
                     return;
 
                 textBlock_Title.Text = $"已选择 \"{Path.GetFileName(path)}\"";
-                textBlock_Subtitle.Text = $"路径: \"{path}\" 这样对吗？";
 
                 button_Next.IsEnabled = true;
 
@@ -97,7 +96,6 @@ namespace MinecraftModTranslator.Pages
                     return;
 
                 textBlock_Title.Text = $"已选择 \"{Path.GetFileName(dialog.FileName)}\"";
-                textBlock_Subtitle.Text = $"路径: \"{dialog.FileName}\" 这样对吗？";
 
                 button_Next.IsEnabled = true;
 
