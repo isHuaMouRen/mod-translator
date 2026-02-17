@@ -10,7 +10,8 @@
         Title="Minecraft mod translator"
         Height="600"
         Width="1000"
-        ui:WindowHelper.UseModernWindowStyle="True">
+        ui:WindowHelper.UseModernWindowStyle="True"
+        Icon="/Assets/Icon/Icon.ico">
     <Grid>
         <ui:Frame x:Name="frame" NavigationUIVisibility="Hidden"/>
     </Grid>
