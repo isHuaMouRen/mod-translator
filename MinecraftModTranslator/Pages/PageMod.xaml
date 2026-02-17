@@ -1,0 +1,26 @@
+﻿<ui:Page x:Class="MinecraftModTranslator.Pages.PageMod"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MinecraftModTranslator.Pages"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      xmlns:icons="clr-namespace:MinecraftModTranslator.Controls.Icons"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageMod">
+
+    <Grid>
+        <Grid AllowDrop="True" DragOver="Grid_DragOver" Drop="Grid_Drop" Background="Transparent">
+            <icons:IconAdd HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="100" Margin="0,0,0,100" Opacity="0.8"/>
+            <TextBlock x:Name="textBlock_Title" Text="欢迎来到 Minecraft mod translator !" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0" FontWeight="Bold" FontSize="25" Opacity="0.8"/>
+            <TextBlock x:Name="textBlock_Subtitle" Text="将需要汉化的Mod拖到此窗口，或者" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,110,0,0" FontSize="15" Opacity="0.8"/>
+
+            <Button x:Name="button_Select" Content="手动选择" Style="{DynamicResource AccentButtonStyle}" HorizontalAlignment="Center" Margin="0,180,0,0" Click="button_Select_Click"/>
+
+
+
+            <Button x:Name="button_Next" IsEnabled="False" Style="{DynamicResource AccentButtonStyle}" Content="下一步" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,10" Click="button_Next_Click"/>
+        </Grid>
+    </Grid>
+</ui:Page>

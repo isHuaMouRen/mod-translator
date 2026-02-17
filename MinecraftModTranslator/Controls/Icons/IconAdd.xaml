@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="MinecraftModTranslator.Controls.Icons.IconAdd"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MinecraftModTranslator.Controls.Icons"
+             mc:Ignorable="d">
+    <Viewbox>
+        <Canvas UseLayoutRounding="False" Width="48.0" Height="48.0">
+            <Canvas.Clip>
+                <RectangleGeometry Rect="0.0,0.0,48.0,48.0"/>
+            </Canvas.Clip>
+            <Canvas UseLayoutRounding="False">
+                <Rectangle RadiusX="3.0" RadiusY="3.0" Canvas.Left="4.0" Canvas.Top="4.0" Width="40.0" Height="40.0" Stroke="#ff000000" StrokeLineJoin="Round" StrokeThickness="4.0" StrokeDashCap="Flat"/>
+                <Path Stroke="#ff000000" StrokeLineJoin="Round" StrokeThickness="4.0" StrokeDashCap="Round" StrokeEndLineCap="Round" StrokeStartLineCap="Round">
+                    <Path.Data>
+                        <PathGeometry Figures="M 24 16 v 16 m -8 -8 h 16" FillRule="Nonzero"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Canvas>
+    </Viewbox>
+</UserControl>
