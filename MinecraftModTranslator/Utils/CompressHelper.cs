@@ -31,6 +31,9 @@ namespace MinecraftModTranslator.Utils
         {
             if (!Directory.Exists(sourceDirectory))
                 throw new DirectoryNotFoundException($"源文件夹不存在：{sourceDirectory}");
+            if (File.Exists(zipFilePath))
+                File.Delete(zipFilePath);
+
 
             if (!Directory.Exists(Path.GetDirectoryName(zipFilePath)))
                 Directory.CreateDirectory(Path.GetDirectoryName(zipFilePath)!);
