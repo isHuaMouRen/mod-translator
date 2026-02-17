@@ -12,9 +12,13 @@
 
     <Grid>
         <ctrl:UserScrollViewer Margin="10,10,10,50">
-            <StackPanel x:Name="stackPanel">
-                
-            </StackPanel>
+            <ItemsControl x:Name="itemsControl">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Vertical" IsVirtualizing="True" VirtualizationMode="Recycling"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
         </ctrl:UserScrollViewer>
 
         <StackPanel Orientation="Horizontal" Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Right">

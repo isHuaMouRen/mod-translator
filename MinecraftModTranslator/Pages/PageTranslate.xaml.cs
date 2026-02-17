@@ -1,11 +1,12 @@
 ﻿using MinecraftModTranslator.Classes;
-using MinecraftModTranslator.Classes.JsonConfigs;
 using MinecraftModTranslator.Controls;
 using MinecraftModTranslator.Utils;
 using ModernWpf.Controls;
 using Newtonsoft.Json;
 using System.IO;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 
 namespace MinecraftModTranslator.Pages
 {
@@ -14,15 +15,19 @@ namespace MinecraftModTranslator.Pages
     /// </summary>
     public partial class PageTranslate : ModernWpf.Controls.Page
     {
+
+        private List<object> displayItems = new List<object>();
+
         public PageTranslate()
         {
             InitializeComponent();
 
-            Loaded += ((s, e) =>
+            Loaded += (async (s, e) =>
             {
                 try
                 {
-                    stackPanel.Children.Clear();
+                    
+
 
                     //遍历每个Lang文件夹
                     foreach (var langDir in Globals.ModLangDir)
@@ -31,7 +36,7 @@ namespace MinecraftModTranslator.Pages
                         {
                             Text = $"assets.{Path.GetFileName(Path.GetDirectoryName(langDir))}"
                         };
-                        stackPanel.Children.Add(textBlock);
+                        displayItems.Add(textBlock);
 
                         string enUSPath = Path.Combine(langDir, "en_us.json");
                         string zhCNPath = Path.Combine(langDir, "zh_cn.json");
@@ -53,16 +58,14 @@ namespace MinecraftModTranslator.Pages
                                 ValueTranslate = zhCNDict!.Count > 0 ? zhCNDict!.ContainsKey(key.Key) ? zhCNDict![key.Key] : "" : "",
                                 Tag = langDir
                             };
-                            stackPanel.Children.Add(ctrl);
+                            displayItems.Add(ctrl);
                         }
 
 
                     }
 
 
-
-
-
+                    itemsControl.ItemsSource = displayItems;
                 }
                 catch (Exception ex)
                 {
@@ -82,7 +85,7 @@ namespace MinecraftModTranslator.Pages
 
                     var zhCNDict = new Dictionary<string, string>();
 
-                    foreach (var child in stackPanel.Children)
+                    foreach (var child in displayItems)
                     {
                         if (child is UserLangKey ulk && (string)ulk.Tag == langDir) 
                         {
