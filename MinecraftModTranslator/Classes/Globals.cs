@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MinecraftModTranslator.Classes.JsonConfigs;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,5 +11,7 @@ namespace MinecraftModTranslator.Classes
 
 
         public static string? ModJarPath;//Jar路径
+        public static string? ModRoot;//Mod根目录
+        public static JsonFabricInfo.Index? ModFabricInfo;//Fabric信息
     }
 }
