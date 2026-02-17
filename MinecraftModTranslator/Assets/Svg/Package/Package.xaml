@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<Viewbox xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform" Name="Package">
+    <Canvas UseLayoutRounding="False" Width="32.0" Height="32.0">
+        <Canvas.Clip>
+            <RectangleGeometry Rect="0.0,0.0,32.0,32.0"/>
+        </Canvas.Clip>
+        <Canvas UseLayoutRounding="False">
+            <Path Fill="#ffb7b7b7">
+                <Path.Data>
+                    <PathGeometry Figures="M 15.35 2.143 c 0.32 -0.19 0.71 -0.19 1.02 0 l 10.92 6.64 c 0.26 0.16 0.42 0.45 0.42 0.75 L 15.86 17.5 L 4 9.632 v -0.1 c 0 -0.3 0.16 -0.59 0.42 -0.74 z" FillRule="Nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path Fill="#ffbdbdbd">
+                <Path.Data>
+                    <PathGeometry Figures="m 15.856 16.246 l 11.36 -6.9 a 0.328 0.328 0 0 1 0.496 0.282 v 12.34 a 1.73 1.73 0 0 1 -0.83 1.48 l -10.64 6.46 a 0.3 0.3 0 0 1 -0.087 0.03 a 0.3 0.3 0 0 1 -0.083 0.011 a 0.9 0.9 0 0 1 -0.682 -0.083 h 0.006 L 13 19 z" FillRule="Nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path Fill="#ff949494">
+                <Path.Data>
+                    <PathGeometry Figures="M 15.86 29.622 v -13.37 l -11.35 -6.9 a 0.331 0.331 0 0 0 -0.51 0.28 v 12.34 c 0 0.61 0.32 1.17 0.83 1.48 l 10.57 6.42 a 0.3 0.3 0 0 0 0.46 -0.25" FillRule="Nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path Fill="#ffd3d3d3">
+                <Path.Data>
+                    <PathGeometry Figures="M 14.5 26.782 v -1.96 c 0 -0.23 -0.12 -0.44 -0.31 -0.56 l -2.8 -1.69 c -0.19 -0.11 -0.43 0.02 -0.43 0.24 v 1.96 c 0 0.23 0.12 0.44 0.31 0.56 l 2.8 1.69 c 0.19 0.11 0.43 -0.02 0.43 -0.24" FillRule="Nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path Fill="#ff686868">
+                <Path.Data>
+                    <PathGeometry Figures="M 11.76 16.553 v -4.56 l -3.28 -0.22 v 3.16 c 0 0.1 0.05 0.2 0.14 0.26 l 2.68 1.63 c 0.2 0.11 0.46 -0.03 0.46 -0.27" FillRule="Nonzero"/>
+                </Path.Data>
+            </Path>
+            <Path Fill="#ff7c7c7c">
+                <Path.Data>
+                    <PathGeometry Figures="m 20.34 4.563 l -11.86 7.21 l 3.28 2 l 11.86 -7.2 z" FillRule="Nonzero"/>
+                </Path.Data>
+            </Path>
+        </Canvas>
+    </Canvas>
+</Viewbox>

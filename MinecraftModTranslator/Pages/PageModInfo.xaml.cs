@@ -57,6 +57,8 @@ namespace MinecraftModTranslator.Pages
                         textBlock_ModDescription.Text = "该Mod似乎没有提供描述";
                     }
 
+                    Globals.ModName = textBlock_ModName.Text;
+
                     //检测语言文件夹
                     if (Globals.ModLangDir.Count == 0)
                     {

@@ -27,7 +27,7 @@ namespace MinecraftModTranslator.Utils
         /// <param name="compressionLevel">压缩等级</param>
         /// <param name="includeBaseDirectory">包含基础文件夹</param>
         /// <exception cref="DirectoryNotFoundException"></exception>
-        public static void Compress(string sourceDirectory,string zipFilePath,CompressionLevel compressionLevel = CompressionLevel.Optimal,bool includeBaseDirectory = false)
+        public static async Task Compress(string sourceDirectory,string zipFilePath,CompressionLevel compressionLevel = CompressionLevel.Optimal,bool includeBaseDirectory = false)
         {
             if (!Directory.Exists(sourceDirectory))
                 throw new DirectoryNotFoundException($"源文件夹不存在：{sourceDirectory}");
@@ -35,7 +35,7 @@ namespace MinecraftModTranslator.Utils
             if (!Directory.Exists(Path.GetDirectoryName(zipFilePath)))
                 Directory.CreateDirectory(Path.GetDirectoryName(zipFilePath)!);
 
-            ZipFile.CreateFromDirectoryAsync(sourceDirectory,zipFilePath,compressionLevel,includeBaseDirectory);
+            await ZipFile.CreateFromDirectoryAsync(sourceDirectory,zipFilePath,compressionLevel,includeBaseDirectory);
         }
     }
 }
