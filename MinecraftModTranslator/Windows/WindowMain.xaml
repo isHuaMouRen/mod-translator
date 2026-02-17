@@ -7,7 +7,7 @@
         xmlns:ui="http://schemas.modernwpf.com/2019"
         mc:Ignorable="d"
         
-        Title="WindowMain"
+        Title="Minecraft mod translator"
         Height="600"
         Width="1000"
         ui:WindowHelper.UseModernWindowStyle="True">

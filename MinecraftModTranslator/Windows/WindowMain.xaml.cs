@@ -1,4 +1,5 @@
-﻿using MinecraftModTranslator.Pages;
+﻿using MinecraftModTranslator.Classes;
+using MinecraftModTranslator.Pages;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,6 +24,7 @@ namespace MinecraftModTranslator.Windows
             InitializeComponent();
             Loaded += ((s, e) =>
             {
+                Title = $"Minecraft Mod Translator - {Globals.Version}";
                 frame.Navigate(new PageMod());
             });
         }
