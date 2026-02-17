@@ -35,7 +35,7 @@
                     <Grid>
                         <icons:IconPackage VerticalAlignment="Top" Width="100" Height="100" HorizontalAlignment="Center" Margin="0,50,0,0" Opacity="0.8"/>
                         <TextBlock Text="资源包 (推荐)" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0" FontWeight="Bold" FontSize="20"/>
-                        <TextBlock Text="导出为资源包格式，加载此资源包即可享受翻译。Mod更新也不影响 (如提示已损坏或不兼容请忽略)" TextWrapping="Wrap" Margin="10,190,10,10" HorizontalAlignment="Center" Opacity="0.8"/>
+                        <TextBlock Text="导出为资源包格式，加载此资源包即可享受翻译。Mod更新也不影响" TextWrapping="Wrap" Margin="10,190,10,10" HorizontalAlignment="Center" Opacity="0.8"/>
                         <TextBlock Text="格式: .zip" TextWrapping="Wrap" Margin="10,10,10,10" HorizontalAlignment="Center" Opacity="0.8" VerticalAlignment="Bottom"/>
                     </Grid>
                 </Border>

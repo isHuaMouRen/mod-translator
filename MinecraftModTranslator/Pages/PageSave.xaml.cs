@@ -6,6 +6,7 @@ using ModernWpf.Controls;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -110,7 +111,7 @@ namespace MinecraftModTranslator.Pages
                 StartLoad();
 
                 string? savePath;
-                
+
                 if (selectedOption == "mod")
                 {
                     var dialog = new SaveFileDialog
@@ -163,6 +164,7 @@ namespace MinecraftModTranslator.Pages
                     Directory.CreateDirectory(tempDir);
                     Directory.CreateDirectory(Path.Combine(tempDir, "assets"));
 
+                    //语言
                     foreach (var langDir in Globals.ModLangDir)
                     {
                         string lang = Path.Combine(tempDir, "assets", Path.GetFileName(Path.GetDirectoryName(langDir))!, "lang");
@@ -171,15 +173,54 @@ namespace MinecraftModTranslator.Pages
                         File.Copy(Path.Combine(langDir, "zh_cn.json"), Path.Combine(lang, "zh_cn.json"));
                     }
 
-
-                    File.WriteAllText(Path.Combine(tempDir, "pack.mcmeta"), JsonConvert.SerializeObject(new JsonMcmeta.Index
+                    //pack.mcmeta
+                    var radio1 = new RadioButton { Content = "1.21.9-", IsChecked = false };
+                    var radio2 = new RadioButton { Content = "1.21.9+ (包含1.21.9)", IsChecked = true };
+                    await DialogManager.ShowDialogAsync(new ContentDialog
                     {
-                        Pack = new JsonMcmeta.Pack
+                        Title = "选择资源包版本",
+                        Content = new StackPanel
                         {
-                            Description = $"§b{Globals.ModName}§r §a§l翻译包§r§r\n{JsonMcmeta.MadeInfo}"
-                        }
-                    }));
+                            Children = { radio1, radio2 }
+                        },
+                        PrimaryButtonText = "确定",
+                        DefaultButton = ContentDialogButton.Primary
+                    });
 
+                    if (radio1.IsChecked == true)
+                    {
+                        File.WriteAllText(Path.Combine(tempDir, "pack.mcmeta"), JsonConvert.SerializeObject(new JsonMcmetaOld.Index
+                        {
+                            Pack = new JsonMcmetaOld.Pack
+                            {
+                                Description = $"§b{Globals.ModName}§r §a§l翻译包§r§r\n{JsonMcmetaNew.MadeInfo}"
+                            }
+                        }));
+                    }
+                    else
+                    {
+                        File.WriteAllText(Path.Combine(tempDir, "pack.mcmeta"), JsonConvert.SerializeObject(new JsonMcmetaNew.Index
+                        {
+                            Pack = new JsonMcmetaNew.Pack
+                            {
+                                Description = $"§b{Globals.ModName}§r §a§l翻译包§r§r\n{JsonMcmetaNew.MadeInfo}"
+                            }
+                        }));
+                    }
+
+
+                    //图标
+                    if (
+                        Globals.ModFabricInfo != null && Globals.ModFabricInfo.Icon != null &&
+                        File.Exists(Path.Combine(Globals.ModRoot!, Globals.ModFabricInfo.Icon))
+                        )
+                    {
+                        File.Copy(Path.Combine(Globals.ModRoot!, Globals.ModFabricInfo.Icon), Path.Combine(tempDir, "pack.png"));
+                    }
+                    else
+                    {
+                        File.Copy(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!, "Assets", "Image", "Mod.Icon.Placeholder.png"), Path.Combine(tempDir, "pack.png"));
+                    }
 
                     await CompressHelper.Compress(tempDir, savePath);
 
