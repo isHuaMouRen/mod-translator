@@ -13,5 +13,6 @@ namespace MinecraftModTranslator.Classes
         public static string? ModJarPath;//Jar路径
         public static string? ModRoot;//Mod根目录
         public static JsonFabricInfo.Index? ModFabricInfo;//Fabric信息
+        public static List<string> ModLangDir = new List<string>();//语言文件目录列表
     }
 }

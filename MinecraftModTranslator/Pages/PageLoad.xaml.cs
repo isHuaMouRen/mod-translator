@@ -34,6 +34,14 @@ namespace MinecraftModTranslator.Pages
                     //如果是FabricMod就加载信息，Forge的toml信息暂时不考虑
                     if (File.Exists(Path.Combine(Globals.ModRoot, "fabric.mod.json")))
                         Globals.ModFabricInfo = JsonConvert.DeserializeObject<JsonFabricInfo.Index>(File.ReadAllText(Path.Combine(Globals.ModRoot, "fabric.mod.json")));
+                    else
+                        Globals.ModFabricInfo = null;
+
+                    //检测语言文件
+                    string assetsDir = Path.Combine(Globals.ModRoot!, "assets");
+                    foreach (var asset in Directory.GetDirectories(assetsDir))
+                        if (Directory.Exists(Path.Combine(asset, "lang")))
+                            Globals.ModLangDir.Add(Path.Combine(asset, "lang"));
 
 
                     Frame.Navigate(typeof(PageModInfo), null, new ModernWpf.Media.Animation.DrillInNavigationTransitionInfo());
