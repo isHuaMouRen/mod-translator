@@ -2,7 +2,7 @@
 
 namespace MinecraftModTranslator.Classes.JsonConfigs
 {
-    public class JsonMcmeta
+    public class JsonMcmetaNew
     {
         public static string MadeInfo = "§8§n§o= Minecraft Mod Translator =§r§r§r";
 
@@ -18,16 +18,10 @@ namespace MinecraftModTranslator.Classes.JsonConfigs
             public string Description { get; set; } = MadeInfo;
 
             [JsonProperty("min_format")]
-            public int[] MinFormat { get; set; } = { 0, 0 };
+            public int MinFormat { get; set; } = 65;
 
             [JsonProperty("max_format")]
-            public int[] MaxFormat { get; set; } = { 9999, 0 };
-
-            [JsonProperty("pack_format")]
-            public int PackFormat { get; set; } = 0;
-
-            [JsonProperty("supported_formats")]
-            public int[] SupportFormats { get; set; } = { 0, 9999 };
+            public int MaxFormat { get; set; } = 9999;
         }
     }
 }
